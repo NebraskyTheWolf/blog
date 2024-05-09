@@ -1,0 +1,16 @@
+// _base.sass
+* {
+    margin:0;
+    padding:0;
+}
+
+body {
+    font-family: $base-font-family;
+    font-size: $base-font-size;
+    line-height: 1.5;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}

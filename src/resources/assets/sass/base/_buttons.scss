@@ -1,0 +1,59 @@
+.btn {
+    padding: 0.5em 1em;
+    font-size: 1em;
+    border-radius: 0.2em;
+    text-transform: uppercase;
+    transition: background-color 0.3s ease;
+
+    &:hover {
+        filter: brightness(85%);
+    }
+
+    &--primary {
+        background-color: $primary-color;
+        color: $white-color;
+    }
+
+    &--secondary {
+        background-color: $secondary-color;
+        color: $white-color;
+    }
+
+    &--success {
+        background-color: $success-color;
+        color: $white-color;
+    }
+
+    &--danger {
+        background-color: $danger-color;
+        color: $white-color;
+    }
+}
+
+.btn .btn-loading {
+    position: relative;
+
+    &.is-loading {
+        color: transparent !important;
+
+        &:after {
+            content: "";
+            display: block;
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            border: 2px solid #FFF;
+            border-top-color: transparent;
+            border-radius: 50%;
+            left: calc(50% - 10px);
+            top: calc(50% - 10px);
+            animation: spin 1s linear infinite;
+        }
+    }
+}
+
+@keyframes spin {
+    100% {
+        transform: rotate(360deg);
+    }
+}

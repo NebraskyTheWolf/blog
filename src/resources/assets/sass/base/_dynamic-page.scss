@@ -1,0 +1,200 @@
+// _dynamic-page.scss
+.dynamic-page-container {
+    h2.icon.header {
+        color: $page-title-color;
+
+        .icon {
+            color: #fff;
+        }
+    }
+
+    p.page-description {
+        color: $page-description-color;
+        font-size: 1.2em;
+        padding: 1em 0;
+    }
+
+    div.sidebar {
+        float: left;
+        width: 20%; // change this as you need
+        padding: 1em;
+        background-color: $sidebar-background-color;
+        color: $sidebar-text-color;
+
+        h3 {
+            margin-top: 0;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+
+            li {
+                padding: 0.5em 0;
+            }
+        }
+
+        .author-info {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1em;
+
+            .author-avatar {
+                width: $avatar-size;
+                height: $avatar-size;
+                border-radius: 50%;
+                object-fit: cover;
+                margin-right: 1em;
+            }
+
+            .author-details {
+                .author-name {
+                    color: $author-name-color;
+                    font-size: 1.1em;
+                    font-weight: bold;
+                }
+
+                .author-role {
+                    color: $author-role-color;
+                }
+            }
+        }
+    }
+
+    div.content {
+        float: right;
+        width: 75%; // adjust this as required
+        padding: 1em;
+
+        div.section {
+            margin-bottom: 2em;
+        }
+    }
+
+    // Clearfix to clear floating elements inside .content-container-cc
+    // You can use Bootstrap's clearfix class in the .content-container-cc div instead of this
+    .content-container-cc::after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+
+    button {
+        background-color: $button-bg-color;
+        color: $button-text-color;
+        border: none;
+        padding: 0.5em 1em;
+        border-radius: 0.25em;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+
+        &:hover {
+            background-color: darken($button-bg-color, 10%);
+        }
+    }
+
+    // Styles for Comments
+    .comment {
+        margin-bottom: 1.5em;
+        padding: 1em;
+        background-color: $comment-bg-color;
+        border: 1px solid $comment-border-color;
+        border-radius: $border-radius;
+
+        &__author {
+            font-weight: bold;
+            color: $comment-author-color;
+            display: flex;
+            align-items: center;
+        }
+
+        &__avatar {
+            border-radius: 50%;
+            height: $avatar-size;
+            width: $avatar-size;
+            margin-right: 1em;
+        }
+
+        &__date {
+            font-size: 0.8em;
+            color: gray;
+            margin: 0.2em 0;
+        }
+    }
+
+    .comment-form {
+        margin-top: 2em;
+
+        .form-control {
+            border-color: $form-border-color;
+            background-color: $form-bg-color;
+
+            &:focus {
+                border-color: darken($form-border-color, 10%);
+                outline-color: darken($form-border-color, 10%);
+            }
+        }
+
+        .btn {
+            background-color: $button-color;
+            color: $button-text-color;
+
+            &:hover {
+                background-color: darken($button-color, 10%);
+            }
+        }
+    }
+
+    .btn-like {
+        background-color: $btn-like-bg-color;
+        color: $btn-like-color;
+        border: none;
+
+        .fa {
+            margin-right: 0.5em;
+        }
+
+        &:hover {
+            color: $btn-like-hover-color;
+        }
+    }
+
+    .btn-comment {
+        background-color: $btn-comment-bg-color;
+        color: $btn-comment-text-color;
+
+        .fa {
+            margin-right: 0.5em;
+        }
+
+        &:hover {
+            background-color: $btn-comment-hover-bg-color;
+        }
+    }
+
+    .card {
+        border: 1px solid $card-border-color;
+        background-color: $card-bg-color;
+        border-radius: 0.25em;
+        padding: 1em;
+        display: flex;
+
+        .card-icon {
+            color: $card-icon-color;
+            font-size: 2em;
+            margin-right: 1em;
+        }
+
+        .card-body {
+            .card-title {
+                color: $card-title-color;
+                font-size: 1.25em;
+                margin-bottom: 0.5em;
+            }
+
+            .card-description {
+                color: $card-description-color;
+            }
+        }
+    }
+}

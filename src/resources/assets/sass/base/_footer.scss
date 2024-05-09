@@ -1,0 +1,25 @@
+.footer {
+    background-color: $footer-background-color;
+    color: $footer-text-color;
+    padding: 2em;
+    text-align: center;
+
+    &__link {
+        color: $footer-link-color;
+        margin: 0 0.5em;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+
+    &__content {
+        margin: 1em 0;
+    }
+
+    &__copyright {
+        margin-top: 2em;
+        font-size: 0.8em;
+        color: lighten($footer-text-color, 20%);
+    }
+}

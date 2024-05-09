@@ -1,0 +1,17 @@
+// _header.sass
+.header {
+    background-color: $primary-color;
+    color: $white-color;
+    padding: 1em 0;
+    font-size: 1.25em;
+    text-align: center;
+
+    &__logo {
+        display: inline-block;
+        margin-right: 1em;
+    }
+
+    &__title {
+        display: inline-block;
+    }
+}

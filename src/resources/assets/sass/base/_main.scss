@@ -1,0 +1,40 @@
+.main-content {
+    padding: $main-content-padding;
+    background-color: $main-content-bg-color;
+
+    // Style for the header section
+    .header {
+        margin-bottom: 2em;
+
+        .title {
+            color: $title-color;
+            font-size: 2em;
+            margin-bottom: 1em;
+        }
+
+        .description {
+            color: $description-color;
+            font-size: 1.25em;
+            margin-bottom: 1em;
+        }
+    }
+
+    // Styles for the carousel
+    .carousel {
+        .carousel-control-prev-icon,
+        .carousel-control-next-icon {
+            background-color: $carousel-control-color;
+        }
+
+        .carousel-fade {
+            .carousel-item {
+                transition: opacity 1s ease-in-out;
+                opacity: 0;
+
+                &.active {
+                    opacity: 1;
+                }
+            }
+        }
+    }
+}

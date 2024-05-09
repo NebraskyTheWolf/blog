@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stream Service</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #0E1414; /* Background */
+            color: #FFFFFF; /* Foreground */
+        }
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: flex-start;
+            padding: 20px;
+        }
+        .video-container {
+            flex: 1;
+            margin-right: 20px;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+        }
+        .chat-container {
+            flex: 1;
+            margin-left: 20px;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+        }
+        iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        #chat {
+            width: 100%;
+            height: 100%;
+            border: none;
+            background-color: #1F1F1F; /* Darker Background */
+            color: #FFFFFF; /* Foreground */
+            padding: 10px;
+            box-sizing: border-box;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+            resize: vertical;
+        }
+        .sidebar {
+            padding: 20px;
+            background-color: #1F1F1F; /* Darker Background */
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+            margin-top: 20px;
+        }
+        h1 {
+            margin-top: 0;
+            color: #FF002E; /* Primary */
+            text-align: center;
+        }
+        h2 {
+            margin-top: 0;
+            color: #FFFFFF; /* Foreground */
+        }
+        p {
+            margin: 0;
+            color: #FFFFFF; /* Foreground */
+        }
+        .message {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        .avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+        .username {
+            font-weight: bold;
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+<h1>Movie Title</h1>
+<div class="container">
+    <div class="video-container">
+        <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" frameborder="0" allowfullscreen></iframe>
+        <div class="sidebar">
+            <h2>Stats</h2>
+            <p>Total Viewers: 1000</p>
+            <p>Active Viewers: 500</p>
+            <p>New Followers: 50</p>
+        </div>
+    </div>
+    <div class="chat-container">
+        <div id="chat">
+            <div class="message">
+                <img class="avatar" src="https://via.placeholder.com/40" alt="Avatar">
+                <span class="username">User1:</span>
+                <span>Hi everyone!</span>
+            </div>
+            <div class="message">
+                <img class="avatar" src="https://via.placeholder.com/40" alt="Avatar">
+                <span class="username">User2:</span>
+                <span>Hello!</span>
+            </div>
+            <!-- Add more messages here -->
+        </div>
+    </div>
+</div>
+
+<script>
+    // You can add JavaScript here to handle chat functionality and update stats in real-time
+    // For simplicity, I'll just simulate chat messages being added to the chat container
+
+    // Simulate receiving chat messages
+    setInterval(function() {
+        const chatContainer = document.getElementById('chat');
+        const messages = [
+            {username: "User1", message: "Hi everyone!", avatar: "https://via.placeholder.com/40"},
+            {username: "User2", message: "Hello!", avatar: "https://via.placeholder.com/40"},
+            // Add more messages as objects with username, message, and avatar properties
+        ];
+        messages.forEach(function(msg) {
+            var messageDiv = document.createElement('div');
+            messageDiv.classList.add('message');
+            messageDiv.innerHTML = `
+                    <img class="avatar" src="${msg.avatar}" alt="Avatar">
+                    <span class="username">${msg.username}:</span>
+                    <span>${msg.message}</span>
+                `;
+            chatContainer.appendChild(messageDiv);
+        });
+    }, 3000); // Simulate a new message every 3 seconds
+</script>
+</body>
+</html>

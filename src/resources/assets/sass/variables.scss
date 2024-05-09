@@ -1,0 +1,106 @@
+$base-font-family: Arial, sans-serif;
+$base-font-size: 16px;
+
+$primary-color: #FF002E;
+$secondary-color: #007BFF;
+
+$success-color: #28A745;
+$danger-color: #DC3545;
+$white-color: #FFF;
+$primary-color-hover: #333;
+$primary-color-active: #666;
+$disabled-color: #999;
+
+$btn-padding: 10px 20px;
+$container-width: 1200px;
+$container-padding: 20px;
+$container-background-color: #f8f9fa;
+
+$footer-background-color: #252525;
+$footer-text-color: #FFF;
+$footer-link-color: #007BFF;
+
+$input-border-color:  #ccc;
+$input-focus-border-color: $primary-color;
+$input-background-color: #fff;
+$input-color: #333;
+
+$modal-background-color: #fff;
+$modal-content-color: #333;
+$modal-max-width: 600px;
+$modal-overlay-background: rgba(0, 0, 0, 0.5);
+
+$progress-bar-height: 20px;
+$progress-bar-bg-color: #f3f3f3;
+$progress-bar-color: $primary-color;
+
+$loader-size: 50px;
+$loader-border-width: 6px;
+$loader-border-color: #f3f3f3;
+$loader-border-active-color: $primary-color;
+
+$skeleton-color: #f6f7f8;
+$skeleton-highlight-color: #edeef1;
+
+$sticky-container-bg: #f8f9fa;
+
+$arrow-size: 30px;
+
+$border-radius: 4px;
+$button-padding: 0.5em 1em;
+$box-shadow: 0 0.5em 1em -0.125em rgba(10, 10, 10, 0.1), 0 0 0 1px rgba(10, 10, 10, 0.02);
+
+$loader-color: orange;
+$overlay-color: #000000;
+
+$page-title-color: $primary-color;
+$page-description-color: #fff;
+$sidebar-background-color: #f8f9fa;
+$sidebar-text-color: #fff;
+
+$button-bg-color: #007BFF;
+$button-text-color: #fff;
+$comment-author-color: #007BFF;
+$comment-border-color: #eaeaea;
+$comment-bg-color: #f8f9fa;
+$avatar-size: 40px;
+
+$form-border-color: #e8e8e8;
+$form-bg-color: #f5f5f5;
+$button-color: #0056b3;
+$button-text-color: #fff;
+
+$btn-like-bg-color: transparent;
+$btn-like-color: #007bff;
+$btn-like-hover-color: #0056b3;
+
+$btn-comment-bg-color: #007BFF;
+$btn-comment-text-color: #FFF;
+$btn-comment-hover-bg-color: #0056b3;
+
+$selector-color: #007BFF;
+$selector-hover-color: #0056b3;
+$selector-bg-color: #ffffff;
+
+$input-border-color: #e8e8e8;
+$input-bg-color: #f5f5f5;
+
+$btn-submit-bg-color: #007BFF;
+$btn-submit-text-color: #FFF;
+$btn-submit-hover-bg-color: #0056b3;
+
+$author-name-color: #333;
+$author-role-color: #777;
+
+$card-bg-color: #F5F5F5;
+$card-border-color: #EEE;
+$card-title-color: #333;
+$card-description-color: #666;
+$card-icon-color: $primary-color;
+
+
+$title-color: $primary-color;
+$description-color: #fff;
+$carousel-control-color: #007BFF;
+$main-content-padding: 2em;
+$main-content-bg-color: #FAFAFA;

@@ -1,0 +1,33 @@
+version: '3.8'
+
+services:
+  dashboard:
+    image: ghcr.io/fluffici/main:${WEBSITE_VERSION}
+    hostname: primary
+    volumes:
+      - type: volume
+        source: primary-dataset
+        target: /var/www/html/storage
+    environment:
+      APP_DEBUG: ${APP_DEBUG}
+      APP_ENV: ${APP_ENV}
+      APP_KEY: ${APP_KEY}
+      PUBLIC_URL: ${PUBLIC_URL}
+      DATABASE_URL: ${DATABASE_URL}
+      AUTH_CLIENT_ID: ${AUTH_CLIENT_ID}
+      AUTH_CLIENT_SECRET: ${AUTH_CLIENT_SECRET}
+      AUTH_REDIRECT_URI: ${AUTH_REDIRECT_URI}
+      AUTH_CLIENT_SCOPE: ${AUTH_CLIENT_SCOPE}
+      SESSION_DRIVER: ${SESSION_DRIVER}
+    networks:
+      - proxy
+      - dashboard-db
+
+networks:
+  proxy:
+    external: true
+  dashboard-db:
+    external: true
+
+volumes:
+  primary-dataset:
