@@ -20,6 +20,7 @@
             line-height: 1.7; /* increase line height for better readability  */
             color: #fff; /* Make text color a dark gray for easy reading */
             max-width: 800px; /* optimal line length for reading is generally around 60-75 characters, adjust as needed */
+            margin: 0 auto; /* Center the container horizontally */
             overflow-y: auto; /* Keep overflow setting */
         }
 
@@ -520,6 +521,10 @@
                 font-size: 14px;
             }
 
+            .btn .btn-secondary {
+                background-color: #0a4fff;
+            }
+
             .modal-fluffici .modal-content {
                 width: 80%; /* Adjusted width for smaller screens */
             }
@@ -554,7 +559,7 @@
             }
 
             /* CSS for the content container */
-            .content-container {
+            .blog-post .content-container {
                 max-width: 800px;
                 margin: 2em auto;
                 padding: 20px 40px;
@@ -583,11 +588,10 @@
 @endsection
 
 @section('metadata')
-    <small class="post-meta" style="color: #fff">Zveřejněno
-        v {{ date('F j, Y, g:i a', strtotime($page->created_at)) }}</small>
+    <small class="post-meta" style="color: #fff">Zveřejněno v {{ \Carbon\Carbon::parse($page->created_at)->format("F j, Y, H:i") }}</small>
     <br>
     <small class="post-meta"
-           style="color: #fff">{{ __('common.likes', [ 'likes' => count(PostsLikes::all()) ]) }}</small>
+           style="color: #fff">{{ __('common.likes', [ 'likes' => $page->likes ]) }}</small>
 
     @if(Auth::check())
         <form action="{{ route('comment.like') }}" method="post">
@@ -664,7 +668,7 @@
                                 <div class="author-meta">
                                     <a class="author-name open-modal-btn-author">{{ $author->name }}</a>
                                     <p class="author-role"
-                                       style="color: #fff;">{{ BetterStackService::fetchRoles($author->id, false) }}</p>
+                                       style="color: #fff;">{{ $author->roles }}</p>
                                 </div>
                             </div>
                         </div>
@@ -730,7 +734,7 @@
             <div class="profile-header">
                 <div class="profile-info">
                     <div class="profile-name">{{ $author->name }}</div>
-                    <div class="profile-discriminator">{{ strtolower('@' . $author->name) }}</div>
+                    <div class="profile-discriminator">{{ $author->tag }}</div>
                 </div>
                 <img src="{{ $author->avatar }}" alt="Profile Picture" class="profile-picture">
             </div>
@@ -753,13 +757,13 @@
 
                 <div class="about-section">
                     <span class="about-label">Připojil/a se k Fluffici v:</span>
-                    <p>{{ date('F j, Y, g:i a', strtotime($author->created_at)) }}</p>
+                    <p>{{ $author->created_at->format('F j, Y, g:i a') }}</p>
                 </div>
 
                 <div class="about-section">
                     <span class="about-label">Roles</span>
                     <div class="role-container">
-                        @foreach(BetterStackService::fetchRoles($author->id, true) as $role)
+                        @foreach($author->roles_array as $role)
                             <div class="role-card">
                                 @if($role === "Administrátor")
                                     <svg xmlns="http://www.w3.org/2000/svg"

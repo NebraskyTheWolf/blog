@@ -6,9 +6,11 @@ use App\Models\EventAttachments;
 use App\Models\Events;
 use App\Models\Post;
 use App\Models\PostsComments;
+use App\Models\PostsLikes;
 use App\Models\ReportedAttachments;
 use App\Models\User;
 use Carbon\Carbon;
+use Httpful\Exception\ConnectionErrorException;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
 use Illuminate\Foundation\Application;
@@ -30,6 +32,9 @@ class HomeController extends Controller
         return redirect()->route('news');
     }
 
+    /**
+     * @throws ConnectionErrorException
+     */
     public function article(Request $request): View|Application|Factory|\Illuminate\Contracts\Foundation\Application {
         $pageSlug = (isset($request->slug)) ? intval($request->slug) : false;
 
@@ -66,6 +71,11 @@ class HomeController extends Controller
                 $comment->user->avatar = "https://autumn.fluffici.eu/avatars/" . $comment->user->avatar_id;
             }
         }
+
+        $page->likes = count(PostsLikes::where('post_id', $page->id)->get()) ?? 0;
+        $author->roles = BetterStackService::fetchRoles($author->id, false);
+        $author->roles_array = BetterStackService::fetchRoles($author->id, true);
+        $author->tag = '@' . str_replace(' ', '_', strtolower($author->name));
 
         return view('layouts.pages', compact(
             'page',

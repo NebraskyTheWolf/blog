@@ -19,8 +19,9 @@ return [
     'login.now' => 'Nyní jste přihlášeni.',
     'login.redirecting' => 'Přesměrování...',
 
-    'main' => 'Main',
-    'report' => 'Article content',
-    'post.no_comments' => 'No comments yet.',
-    'metadata' => 'Article Information',
+    'main' => 'Hlavní',
+    'report' => 'Obsah článku',
+    'post.no_comments' => 'Zatím žádné komentáře.',
+    'metadata' => 'Informace o článku',
+    'news' => 'Novinky'
 ];

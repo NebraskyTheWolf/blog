@@ -47,7 +47,7 @@ Route::middleware(['auth', 'throttle:30,60'])->post('/post/comment', function (R
 
     if (strlen($msg) >= 1000)
         return redirect(env('PUBLIC_URL') . '/post/' . $id)
-            ->with('toast.error', __('common.comment.too_long'));
+            ->with('flash.error', __('common.comment.too_long'));
 
     $comment = new PostsComments();
     $comment->post_id = $id;
@@ -56,7 +56,7 @@ Route::middleware(['auth', 'throttle:30,60'])->post('/post/comment', function (R
     $comment->save();
 
     return redirect(env('PUBLIC_URL') . '/article/' . $id)
-        ->with('toast.error', __('common.comment.sent'));
+        ->with('flash.success', __('common.comment.sent'));
 })->name('comment.store');
 Route::middleware(['auth', 'throttle:30,60'])->post('/post/like', function (Request $request) {
     $id = intval($request->get('postId'));

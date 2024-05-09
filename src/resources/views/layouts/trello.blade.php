@@ -12,7 +12,7 @@
                         <p class="card-text">{{ $article->description }}</p>
                     </div>
                     <div class="card-footer">
-                        <small class="text-muted">Datum: {{ $article->created_at->format('F j, Y, H:i') }}</small><br>
+                        <small class="text-muted">Datum: {{ \Carbon\Carbon::parse($article->created_at)->format("F j, Y, H:i") }}</small><br>
                         <small class="text-muted">Autor: {{ $article->author->name }}</small>
                     </div>
                 </a>

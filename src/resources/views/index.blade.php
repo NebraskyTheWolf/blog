@@ -9,7 +9,8 @@
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lexend+Deca&display=swap">
         <link rel="stylesheet" type="text/css" href="{{ url('/css/app.css') }}">
         <link rel="stylesheet" type="text/css" href="{{ url('/css/event.css') }}">
-
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orestbida/cookieconsent@3.0.0/dist/cookieconsent.css">
+        <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" crossorigin="anonymous">
 
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.js" integrity="sha512-+k1pnlgt4F1H8L7t3z95o3/KO+o78INEcXTbnoJQ/F2VqDVhWoaiVml/OEHv9HsVgxUaVW+IbiZPUJQfF/YxZw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
@@ -73,8 +74,27 @@
             @yield('content')
         </main>
 
+        <script type="module" src="{{ url('/js/cookieconsent-config.js') }}"></script>
         <script src="{{ url('/js/app.js') }}"></script>
         @yield('modals')
         @yield('script')
+
+        <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+        <script>
+            @if (session('flash.success'))
+            toastr.success("{!! addslashes(session('flash.success')) !!}")
+            @endif
+            @if (session('flash.error'))
+            toastr.error("{!! addslashes(session('flash.error')) !!}")
+            @endif
+            @if (session('flash.warning'))
+            toastr.warning("{!! addslashes(session('flash.warning')) !!}")
+            @endif
+            @if (session('flash.info'))
+            toastr.info("{!! addslashes(session('flash.info')) !!}")
+            @endif
+
+            displayHeaders('Blog');
+        </script>
     </body>
 </html>

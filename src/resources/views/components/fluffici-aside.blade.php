@@ -26,6 +26,6 @@
     @endif
 
     @if(request()->routeIs('article'))
-        <a id="displayMetadata">{{ __('common.metadata') }}</a>
+        <button id="displayMetadata" class="meta-btn">{{ __('common.metadata') }}</button>
     @endif
 </aside>

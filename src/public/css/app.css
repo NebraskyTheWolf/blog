@@ -24,7 +24,7 @@ body {
     overflow-y: auto;
     scrollbar-color: #334141 #1F2937; /* scrollbar-thumb-color scrollbar-track-color */
     scrollbar-width: thin; /* "auto" for OS-dependent style */
-    height: 100vh;
+    height: fit-content;
 }
 
 .sidebar-brand {
@@ -106,6 +106,22 @@ body {
 
 .logout-btn {
     background-color: #FF002E;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin-top: 20px;
+    cursor: pointer;
+    width: 100%;
+    border-radius: 5px;
+}
+
+
+.meta-btn {
+    background-color: #0a4fff;
     border: none;
     color: white;
     padding: 10px 20px;
@@ -614,6 +630,7 @@ body {
     background-color: #1a1c1c;
     color: #FFFFFF;
     border: 1px solid #1a1c1c;
+    margin: 0 auto;
 }
 
 .col-md-3 {

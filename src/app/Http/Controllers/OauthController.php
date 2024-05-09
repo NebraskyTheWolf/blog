@@ -130,19 +130,16 @@ class OauthController extends Controller
     {
         $code = $request->query('code');
         $authorize = $this->authSDK->authorize($code);
-        if (!is_int($authorize->getResult())) $this->displayError(403, 'UserId should be an integer. Got ' . gettype($authorize->getResult()));
+        // Useless
+        //if (!is_int($authorize->getResult())) $this->displayError(403, 'UserId should be an integer. Got ' . gettype($authorize->getResult()));
         return User::find($authorize->getResult());
     }
 
     public function displayError($code, $message): RedirectResponse
     {
-        toast()
-            ->danger($message)
-            ->pushOnNextPage();
-
         return redirect()->route('news', [
             'message' => $message,
             'code' => $code
-        ]);
+        ])->with('flash.error', $message);
     }
 }
