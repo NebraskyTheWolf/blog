@@ -103,4 +103,82 @@ class HomeController extends Controller
 
         return \view('layouts.trello')->with('newsArticles', $newsArticles);
     }
+
+    public function sendComment(Request $request): RedirectResponse
+    {
+        $id = intval($request->get('postId'));
+
+        if (Auth::guest()) {
+            return redirect(env('PUBLIC_URL') . '/post/' . $id);
+        }
+
+        if ($request->user()->discord_linked == 1) {
+            if ($this->isDBVerified($request->user()->discord_id)) {
+                $msg = $request->get('comment');
+
+                if (strlen($msg) >= 1000)
+                    return redirect(env('PUBLIC_URL') . '/post/' . $id)
+                        ->with('flash.error', __('common.comment.too_long'));
+
+                $comment = new PostsComments();
+                $comment->post_id = $id;
+                $comment->author = Auth::id();
+                $comment->message = $msg;
+                $comment->save();
+
+                return redirect(env('PUBLIC_URL') . '/article/' . $id)
+                    ->with('flash.success', __('common.comment.sent'));
+            } else {
+                return redirect(env('PUBLIC_URL') . '/article/' . $id)->with('flash.error', __('common.verification.required'));
+            }
+        } else {
+            return redirect(env('PUBLIC_URL') . '/article/' . $id)->with('flash.error', __('common.discord.required'));
+        }
+    }
+
+    public function sendLike(Request $request): RedirectResponse
+    {
+        $id = intval($request->get('postId'));
+
+        if (Auth::guest()) {
+            return redirect(env('PUBLIC_URL') . '/post/' . $id);
+        }
+
+        if ($request->user()->discord_linked == 1) {
+            if ($this->isDBVerified($request->user()->discord_id)) {
+                $action = $request->get('action');
+
+                if ($action == 'like') {
+                    $like = new PostsLikes();
+                    $like->post_id = $id;
+                    $like->user_id = Auth::id();
+                    $like->likes = 1;
+                    $like->save();
+                } else if ($action == 'unlike') {
+                    $like = PostsLikes::where('post_id', $id)->where('user_id', Auth::id())->first();
+                    if ($like) {
+                        $like->delete();
+                    }
+                }
+
+                return redirect(env('PUBLIC_URL') . '/article/' . $id);
+            } else {
+                return redirect(env('PUBLIC_URL') . '/article/' . $id)->with('flash.error', __('common.verification.required'));
+            }
+        } else {
+            return redirect(env('PUBLIC_URL') . '/article/' . $id)->with('flash.error', __('common.discord.required'));
+        }
+    }
+
+    public function isDBVerified(string $snowflake): bool
+    {
+        $response = \Httpful\Request::get("https://frdbapi.fluffici.eu/api/users/" . $snowflake . '/is-verified')->expectsJson()->send();
+
+        if ($response->code === 200) {
+            $body = json_decode(json_encode($response->body), true);
+            return boolval($body['data']['verified']);
+        }
+
+        return false;
+    }
 }

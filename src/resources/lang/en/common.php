@@ -23,4 +23,8 @@ return [
     'report' => 'Article content',
     'post.no_comments' => 'No comments yet.',
     'metadata' => 'Article Information',
+    'account' => 'My Account',
+
+    'discord.required' => 'You need to join Fluffici\'s discord server.',
+    'verification.required' => 'You need to be verified on Fluffici\'s discord server.'
 ];

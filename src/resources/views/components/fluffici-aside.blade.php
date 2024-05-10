@@ -19,6 +19,7 @@
             @endif
 
             <p style="color: #fff">{{ Auth::user()->name }}</p>
+            <a class="logout-btn" href="https://account.fluffici.eu">{{ __('common.account') }}</a>
         </div>
         <a class="logout-btn" href="{{ route('profile.logout') }}">{{ __('common.logout') }}</a>
     @else
