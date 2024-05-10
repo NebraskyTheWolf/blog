@@ -62,7 +62,7 @@
 
         <title>@yield('title') - Fluffici</title>
     </head>
-   <body>
+   <body class="dark:bg-dots-lighter">
         <x-fluffici-aside/>
 
         <main class="main-content">
