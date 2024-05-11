@@ -29,12 +29,12 @@ CookieConsent.run({
         translations: {
             en: {
                 consentModal: {
-                    title: '<img src="https://autumn.fluffici.eu/attachments/ystmRycjgISxQse2DtDbZ0O9UD7IIs5QomOCbQHwPd" alt="Your Alt Text" style="width: 32px;margin-right: 10px;">Hello traveller, it\'s cookie time!',
+                    title: '<img src="https://autumn.fluffici.eu/attachments/ystmRycjgISxQse2DtDbZ0O9UD7IIs5QomOCbQHwPd" alt="Your Alt Text" style="width: 65px;margin-right: 10px;">Hello traveller, it\'s cookie time!',
                     description: "Our website uses cookies to enhance your browsing experience. A cookie is a small file stored on your device, allowing us to recognize and remember you when you return to our website. These cookies cover a variety areas.",
                     acceptAllBtn: "Accept all",
                     acceptNecessaryBtn: "Reject all",
                     showPreferencesBtn: "Manage preferences",
-                    footer: "<a href=\"https://fluffici.eu/privacy\">Privacy Policy</a>\n<a href=\"https://fluffici.eu/tos\">Terms and conditions</a>"
+                    footer: "<a href=\"https://fluffici.eu/privacy\">Privacy Policy</a>\n<a href=\"https://fluffici.eu/tos\">Terms And Conditions</a>"
                 },
                 preferencesModal: {
                     title: "Consent Preferences Center",
