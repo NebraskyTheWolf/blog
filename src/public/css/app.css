@@ -646,3 +646,74 @@ body {
 .mb-4 {
     margin-bottom: 1.5rem;
 }
+
+.footer {
+    /*! background-color: #1a1c1c; */
+    color: #fff;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /*! max-width: 1200px; */
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.developer-card {
+    background-color: #211f1f;
+    color: #bbb;
+    padding: 5px 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.developer-card a {
+    color: #FF002E;
+    text-decoration: none;
+}
+
+.developer-card a:hover {
+    text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+    .footer {
+        background-color: #1a1c1c;
+        color: #fff;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        z-index: 999; /* Ensure it's above other content */
+    }
+
+    .footer-content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        max-width: 100vw; /* Ensure it doesn't exceed screen width */
+        padding: 10px 20px; /* Increased padding for better touch experience */
+    }
+
+    .developer-card {
+        background-color: #211f1f;
+        color: #bbb;
+        padding: 5px 10px;
+        border-radius: 5px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    .developer-card a {
+        color: #FF002E;
+        text-decoration: none;
+    }
+
+    .developer-card a:hover {
+        text-decoration: underline;
+    }
+}

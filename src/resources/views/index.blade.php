@@ -1,3 +1,29 @@
+@php use Carbon\Carbon; @endphp
+
+<!--
+    ===========================================
+     SOFTWARE PRODUCT PROPRIETARY LICENSE
+    ===========================================
+
+    Fluffici, z.s., IČO: 19786077, Year: 2024
+
+    DEVELOPER INFORMATION:
+    Developer Name: Vakea
+    Contact Information: vakea@fluffici.eu
+
+    TERMS AND CONDITIONS FOR USAGE
+
+    1. You may only use the Software Product in accordance with the accompanying documentation.
+    2. Reproduction and distribution of the Software Product are strictly prohibited, except through official channels defined and controlled by the copyright holder. Any illegal reproduction or distribution will be subject to legal action.
+    3. You may not modify or make derivative works of the Software Product.
+    4. You must retain all copyright, trademark, and proprietary notices on all copies of the Software Product made, if any.
+    5. You are not granted any rights to any trademarks or service marks of the Software Product.
+
+    THIS SOFTWARE PRODUCT IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED.
+
+    ===========================================
+-->
+
 <!DOCTYPE html>
 <html lang="{{ app()->getLocale() }}">
     <head>
@@ -73,6 +99,15 @@
 
             @yield('content')
         </main>
+
+        <footer class="footer">
+            <div class="footer-content">
+                <p>Copyright &copy; <a href="https://fluffici.eu">Fluffíci, z.s.</a> {{ Carbon::now()->year }} | Všechna práva vyhrazena.</p>
+                <div class="developer-card">
+                    <p>Developed by <a href="https://nebraskythewolf.work/en">Vakea</a> with ❤️🦊</p>
+                </div>
+            </div>
+        </footer>
 
         <script type="module" src="{{ url('/js/cookieconsent-config.js') }}"></script>
         <script src="{{ url('/js/app.js') }}"></script>
