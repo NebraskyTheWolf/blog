@@ -16,6 +16,15 @@ class LanguageDetector
      */
     public function handle(Request $request, Closure $next): Response
     {
+        if (!Auth::guest() && $request->user()->language !== null) {
+            app()->setLocale($request->user()->language);
+            session()->put('locale', $request->user()->language);
+            $request->setLocale($request->user()->language);
+            return $next($request);
+        }
+
+        $request->setLocale('cs');
+        session()->put('locale', 'cs');
         return $next($request);
     }
 }
