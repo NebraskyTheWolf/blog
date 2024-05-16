@@ -2,14 +2,10 @@
 
 namespace App\Http\Controllers;
 use App\Lib\BetterStackService;
-use App\Models\EventAttachments;
-use App\Models\Events;
 use App\Models\Post;
 use App\Models\PostsComments;
 use App\Models\PostsLikes;
-use App\Models\ReportedAttachments;
 use App\Models\User;
-use Carbon\Carbon;
 use Httpful\Exception\ConnectionErrorException;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
@@ -116,9 +112,19 @@ class HomeController extends Controller
             if ($this->isDBVerified($request->user()->discord_id)) {
                 $msg = $request->get('comment');
 
-                if (strlen($msg) >= 1000)
+                if (strlen($msg) >= 256)
                     return redirect(env('PUBLIC_URL') . '/post/' . $id)
                         ->with('flash.error', __('common.comment.too_long'));
+
+                if (BetterStackService::isModerated($msg)) {
+                    return redirect(env('PUBLIC_URL') . '/article/' . $id)
+                        ->with('flash.success', __('common.comment.moderated'));
+                }
+
+                if ($this->containsLink($msg)) {
+                    return redirect(env('PUBLIC_URL') . '/article/' . $id)
+                        ->with('flash.success', __('common.comment.moderated.link'));
+                }
 
                 $comment = new PostsComments();
                 $comment->post_id = $id;
@@ -134,6 +140,12 @@ class HomeController extends Controller
         } else {
             return redirect(env('PUBLIC_URL') . '/article/' . $id)->with('flash.error', __('common.discord.required'));
         }
+    }
+
+    private function containsLink($msg): bool
+    {
+        $pattern = '#\bhttps?://[^\s()<>]+(?:\([\w\d]+\)|([^[:punct:]\s]|/))#';
+        return preg_match($pattern, $msg) > 0;
     }
 
     public function sendLike(Request $request): RedirectResponse

@@ -26,5 +26,9 @@ return [
     'news' => 'Novinky',
     'account' => 'Můj účet',
     'discord.required' => 'Musíte se připojit na server Flufficiho discordu',
-    'verification.required' => 'Musíte být ověřeni na serveru Flufficiho discordu'
+    'verification.required' => 'Musíte být ověřeni na serveru Flufficiho discordu',
+
+    'comment.moderated' => 'Váš komentář byl moderován, prosím, respektujte "Obchodní podmínky".',
+    'comment.moderated.link' => 'Nemůžete posílat odkazy v komentářích.',
+    'comment.too_long' => 'Váš komentář je příliš dlouhý. (Maximum: 256 znaků).',
 ];

@@ -42,6 +42,33 @@ class BetterStackService
             ['name' => 'Nebyly nastaveny žádné značky.', 'slug' => 'missingno']
         ];
     }
+
+    public static function isModerated(string $text): bool {
+        $response = self::sendRequest('https://api.openai.com/v1/moderations', 'POST', [
+            'input' => $text,
+            'max_tokens' => 12
+        ],
+        [
+            'Content-Type: application/json',
+            'Authorization: Bearer ' . self::$openAIKey
+        ]);
+
+        if ($response && $response['code'] == 200) {
+            $content = json_decode($response['body']);
+            $isFlagged = false;
+
+            foreach ($content->results as $result) {
+                if ($result->flagged) {
+                    $isFlagged = true;
+                }
+            }
+
+            return $isFlagged;
+        }
+
+        return false;
+    }
+
     /**
      * @throws ConnectionErrorException
      */

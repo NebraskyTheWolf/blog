@@ -24,7 +24,7 @@ CookieConsent.run({
         performance: {}
     },
     language: {
-        default: "en",
+        default: "cs",
         autoDetect: "browser",
         translations: {
             en: {
@@ -67,6 +67,51 @@ CookieConsent.run({
                         {
                             title: "More information",
                             description: "For any query in relation to my policy on cookies and your choices, please <a class=\"cc__link\" href=\"mailto:administrace@fluffici.eu\">contact us</a>."
+                        }
+                    ]
+                }
+            },
+
+            cs: {
+                consentModal: {
+                    title: '<img src="https://autumn.fluffici.eu/attachments/ystmRycjgISxQse2DtDbZ0O9UD7IIs5QomOCbQHwPd" alt="Ilustrace našeho maskota" style="width: 65px;margin-right: 10px;">Vítej na webu, dáš si sušenku?',
+                    description: "Náš web používá cookies ke zlepšení tvého uživatelského zážitku. Cookies jsou malé soubory uložené na tvém zařízení, umožňující nám rozeznat a zapamatovat si tě, kdykoli se na náš web navrátíš. Takové cookies pokrývá mnoho různých oblastí.",
+                    acceptAllBtn: "Přijmout všechny",
+                    acceptNecessaryBtn: "Odmítnout všechny",
+                    showPreferencesBtn: "Přizpůsobit dle preference",
+                    footer: "<a href=\"https://fluffici.eu/privacy\">Privacy Policy</a>\n<a href=\"https://fluffici.eu/tos\">Terms And Conditions</a>"
+                },
+                preferencesModal: {
+                    title: "Správa cookies preferencí",
+                    acceptAllBtn: "Přijmout všechny",
+                    acceptNecessaryBtn: "Odmítnout všechny",
+                    savePreferencesBtn: "Uložit preference",
+                    closeIconLabel: "Zavřít okno",
+                    serviceCounterLabel: "Služba|Služby",
+                    sections: [
+                        {
+                            title: "Striktně důležité cookies <span class=\"pm__badge\">Vždy povoleno</span>",
+                            description: "Kritické pro poskytování našich služeb. Zahrnují cookies umožňující přihlášení k zabezpečeným částem webu.",
+                            linkedCategory: "nezbytné"
+                        },
+                        {
+                            title: "Provozní cookies",
+                            description: "Dovol nám optimalizovat funkcionalitu našeho webu tak, že si zapamatujeme tvůj jazyk a oblast.",
+                            linkedCategory: "funkcionalita"
+                        },
+                        {
+                            title: "Výkonové cookies",
+                            description: "Tyto cookies užíváme k analýze, jak je k našemu webu přistupováno, jak je používán nebo jak si vede výkonově. Tyto informace používáme k údržbě, úpravě a zlepšenování našeho webu.",
+                            linkedCategory: "výkon"
+                        },
+                        {
+                            title: "Analytické cookies",
+                            description: "Pomáhají nám ti zajišťovat více relevantní reklamny a zlepšovat tak tvé internetové brouzdání.",
+                            linkedCategory: "analytics"
+                        },
+                        {
+                            title: "Více informací",
+                            description: "Jakékoli otázky ohledně cookies a svých voleb směřuj na <a class=\"cc__link\" href=\"mailto:administrace@fluffici.eu\">náš administrační email</a>."
                         }
                     ]
                 }

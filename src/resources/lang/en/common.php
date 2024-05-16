@@ -1,23 +1,23 @@
 <?php
 
 return [
-    'logout' => 'Odhlásit',
-    'login' => 'Přihlásit',
+    'logout' => 'Logout',
+    'login' => 'Login',
 
-    'news.title' => 'Nejnovější zprávy',
-    'news.description' => 'Zde jsou všechny nejnovější zprávy z Fluffici.',
-    'read.more' => 'Číst více',
-    'read.no_news' => 'Žádné nové články',
+    'news.title' => 'Latest News',
+    'news.description' => 'Here are all the latest news from Fluffici.',
+    'read.more' => 'Read more',
+    'read.no_news' => 'No new articles',
 
-    'post.subjects' => 'Předměty',
-    'post.by' => 'Autor',
-    'post.comments' => 'Komentáře',
-    'likes' => ':likes To se mi líbí.',
+    'post.subjects' => 'Subjects',
+    'post.by' => 'By',
+    'post.comments' => 'Comments',
+    'likes' => ':likes Likes.',
 
-    'logged' => 'Vítejte zpět, :user',
-    'login.success' => 'Přihlášení úspěšné!',
-    'login.now' => 'Nyní jste přihlášeni.',
-    'login.redirecting' => 'Přesměrování...',
+    'logged' => 'Welcome back, :user',
+    'login.success' => 'Login successful!',
+    'login.now' => 'You are now logged in.',
+    'login.redirecting' => 'Redirecting...',
 
     'main' => 'Main',
     'report' => 'Article content',
@@ -26,5 +26,10 @@ return [
     'account' => 'My Account',
 
     'discord.required' => 'You need to join Fluffici\'s discord server.',
-    'verification.required' => 'You need to be verified on Fluffici\'s discord server.'
+    'verification.required' => 'You need to be verified on Fluffici\'s discord server.',
+
+    'comment.moderated' => 'Your comment has been moderated, please respect the "Terms and Condition"',
+    'comment.moderated.link' => 'You cannot send link in the commennts.',
+    'comment.too_long' => 'Your comment is too long. (Maximum: 256 characters).'
+
 ];
