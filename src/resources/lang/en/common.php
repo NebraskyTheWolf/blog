@@ -30,6 +30,7 @@ return [
 
     'comment.moderated' => 'Your comment has been moderated, please respect the "Terms and Condition"',
     'comment.moderated.link' => 'You cannot send link in the commennts.',
-    'comment.too_long' => 'Your comment is too long. (Maximum: 256 characters).'
+    'comment.too_long' => 'Your comment is too long. (Maximum: 256 characters).',
 
+    'news' => 'Articles'
 ];
