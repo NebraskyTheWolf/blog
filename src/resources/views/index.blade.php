@@ -29,6 +29,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
+        <link rel="icon" href="{{ url('img/favicon.png') }}">
+
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lexend+Deca&display=swap">
         <link rel="stylesheet" type="text/css" href="{{ url('/css/app.css') }}">
         <link rel="stylesheet" type="text/css" href="{{ url('/css/event.css') }}">

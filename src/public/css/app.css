@@ -120,6 +120,8 @@ body {
     text-decoration: none;
     display: block;
     font-size: 16px;
+    font-family: 'Lexend Deca', sans-serif;
+    text-transform: uppercase;
 }
 
 .sidebar-nav ul li a:hover {
@@ -144,6 +146,8 @@ body {
     cursor: pointer;
     width: 100%;
     border-radius: 5px;
+    font-family: 'Lexend Deca', sans-serif;
+    text-transform: uppercase;
 }
 
 
@@ -160,6 +164,8 @@ body {
     cursor: pointer;
     width: 100%;
     border-radius: 5px;
+    font-family: 'Lexend Deca', sans-serif;
+    text-transform: uppercase;
 }
 
 /* Main Content */

@@ -31,4 +31,13 @@ return [
     'comment.moderated' => 'Váš komentář byl moderován, prosím, respektujte "Obchodní podmínky".',
     'comment.moderated.link' => 'Nemůžete posílat odkazy v komentářích.',
     'comment.too_long' => 'Váš komentář je příliš dlouhý. (Maximum: 256 znaků).',
+
+    'common.forbidden' => 'Přístup odepřen',
+    'common.forbidden.description' => 'Nemáte oprávnění pro přístup na tuto stránku.',
+
+    'common.not_found' => 'Stránka nenalezena',
+    'common.not_found.description' => 'Stránka, kterou hledáte, mohla být odstraněna, přejmenována, nebo je dočasně nedostupná.',
+
+    'common.maintenance' => 'Údržba',
+    'common.maintenance.description' => 'Právě provádíme plánovanou údržbu. Prosím, zkuste to znovu později.',
 ];

@@ -32,5 +32,14 @@ return [
     'comment.moderated.link' => 'You cannot send link in the commennts.',
     'comment.too_long' => 'Your comment is too long. (Maximum: 256 characters).',
 
-    'news' => 'Articles'
+    'news' => 'Articles',
+
+    'common.forbidden' => 'Access Denied',
+    'common.forbidden.description' => 'You do not have permission to access this page.',
+
+    'common.not_found' => 'Page Not Found',
+    'common.not_found.description' => 'The page you are looking for might have been removed, had its name changed, or is temporarily unavailable.',
+
+    'common.maintenance' => 'Under Maintenance',
+    'common.maintenance.description' => 'We are currently performing scheduled maintenance. Please try again later.',
 ];

@@ -5,7 +5,7 @@
 @section('head')
     <style>
         .maintenance-container {
-            display: flex;
+            /*display: flex; */
             flex-direction: column;
             justify-content: center;
             align-items: center;
