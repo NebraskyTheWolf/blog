@@ -1,7 +1,7 @@
 @php use Illuminate\Support\Facades\Auth; @endphp
 <aside class="sidebar">
     <div class="sidebar-header">
-        <a href="{{ route('news') }}"><img src="https://autumn.fluffici.eu/attachments/eI0QemKZhF6W9EYnDl5JcBGYGvPiIxjPzvrDY_9Klk" alt="header" width="210" class="sidebar-brand"></a>
+        <a href="https://fluffici.eu"><img src="https://autumn.fluffici.eu/attachments/eI0QemKZhF6W9EYnDl5JcBGYGvPiIxjPzvrDY_9Klk" alt="header" width="210" class="sidebar-brand"></a>
     </div>
     <div class="sidebar-nav">
         <h2>{{ __('common.main') }}</h2>
