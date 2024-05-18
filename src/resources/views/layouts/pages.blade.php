@@ -810,6 +810,8 @@
         $(document).ready(function () {
             $('#metadataSidebar').hide()
 
+            let isModalJustOpened = false;
+
             // Open modal when the button is clicked
             $(".open-modal-btn").click(function () {
                 $("#commentModal").fadeIn();
@@ -822,6 +824,11 @@
 
             $(".open-modal-btn-author").click(function () {
                 $("#authorModal").fadeIn();
+
+                isModalJustOpened = true;
+                setTimeout(() => {
+                    isModalJustOpened = false;
+                }, 100);
             });
 
             $('#displayMetadata').on('click', () => {
@@ -829,6 +836,10 @@
             })
 
             $(document).on('click', function(event) {
+                if (isModalJustOpened) {
+                    return;
+                }
+
                 // Check if the clicked target is the modal itself or its descendant elements
                 if (!$(event.target).closest("#authorModal .modal-content").length) {
                     // Clicked outside the modal content
