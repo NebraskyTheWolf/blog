@@ -14,7 +14,7 @@ class BetterStackService
         $openAIUrl = 'https://api.openai.com/v1/completions';
 
         $data = [
-            'prompt' => 'Extract keywords from the following article: "' . $text . '"',
+            'prompt' => 'Extract keywords from the following Czech article: "' . $text . '"',
             'model' => 'gpt-3.5-turbo-instruct',
             'temperature' => 0.7,
             'max_tokens' => 12

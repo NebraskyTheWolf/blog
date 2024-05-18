@@ -827,6 +827,19 @@
             $('#displayMetadata').on('click', () => {
                 $('#metadataSidebar').show()
             })
+
+            $(document).on('click', function(event) {
+                // Check if the clicked target is the modal itself or its descendant elements
+                if (!$(event.target).closest("#authorModal .modal-content").length) {
+                    // Clicked outside the modal content
+                    $("#authorModal").fadeOut(); // Hide the modal
+                }
+            });
+
+            // Optional: Prevent the modal from hiding if you click inside it
+            $("#authorModal .modal-content").on('click', function(event) {
+                event.stopPropagation();
+            });
         });
 
         function openTab(evt, tabName) {
