@@ -811,10 +811,16 @@
             $('#metadataSidebar').hide()
 
             let isModalJustOpened = false;
+            let isSideBarOpened = false;
 
             // Open modal when the button is clicked
             $(".open-modal-btn").click(function () {
                 $("#commentModal").fadeIn();
+
+                isModalJustOpened = true;
+                setTimeout(() => {
+                    isModalJustOpened = false;
+                }, 100);
             });
 
             $(".close").click(function () {
@@ -832,7 +838,12 @@
             });
 
             $('#displayMetadata').on('click', () => {
-                $('#metadataSidebar').show()
+                $('#metadataSidebar').fadeIn()
+
+                isSideBarOpened = true;
+                setTimeout(() => {
+                    isSideBarOpened = false;
+                }, 100);
             })
 
             $(document).on('click', function(event) {
@@ -840,15 +851,34 @@
                     return;
                 }
 
-                // Check if the clicked target is the modal itself or its descendant elements
                 if (!$(event.target).closest("#authorModal .modal-content").length) {
-                    // Clicked outside the modal content
                     $("#authorModal").fadeOut(); // Hide the modal
+                }
+
+                if (!$(event.target).closest("#commentModal .modal-content").length) {
+                    $("#commentModal").fadeOut(); // Hide the modal
                 }
             });
 
-            // Optional: Prevent the modal from hiding if you click inside it
+            $(document).on('click', function(event) {
+                if (isSideBarOpened) {
+                    return;
+                }
+
+                if (!$(event.target).closest("#metadataSidebar .sidebar-article").length) {
+                    $("#metadataSidebar").fadeOut(); // Hide the modal
+                }
+            });
+
             $("#authorModal .modal-content").on('click', function(event) {
+                event.stopPropagation();
+            });
+
+            $("#commentModal .modal-content").on('click', function(event) {
+                event.stopPropagation();
+            });
+
+            $("#metadataSidebar .sidebar-article").on('click', function(event) {
                 event.stopPropagation();
             });
         });
